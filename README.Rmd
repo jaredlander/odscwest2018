@@ -1,9 +1,9 @@
 ---
 output: github_document
 params:
-    className: LearningR
-    organizer: "[Lander Analytics](www.landeranalytics.com)"
-    packages: !r c('here', 'knitr', 'rmarkdown', 'tidyverse', 'usethis')
+    className: ODSC West 2018
+    organizer: "[ODSC](https://odsc.com/california/west-search-schedule-2018)"
+    packages: !r c('coefplot', 'DT', 'pryr', 'doParallel', 'dygraphs', 'flexdashboard', 'ggthemes', 'here', 'jsonlite', 'knitr', 'leaflet', 'rmarkdown', 'shiny', 'UsingR', 'reshape2', 'AmesHousing', 'shinydashboard', 'shinyjs', 'shinythemes', 'threejs', 'tidyverse', 'useful', 'usethis', 'tidymodels', 'glmnet', 'xgboost')
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
