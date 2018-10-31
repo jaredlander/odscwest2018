@@ -1,7 +1,7 @@
 ---
 output: github_document
 params:
-    className: ODSC West 2018
+    className: odscwest2018
     organizer: "[ODSC](https://odsc.com/california/west-search-schedule-2018)"
     packages: !r c('coefplot', 'DT', 'pryr', 'doParallel', 'dygraphs', 'flexdashboard', 'ggthemes', 'here', 'jsonlite', 'knitr', 'leaflet', 'rmarkdown', 'shiny', 'UsingR', 'reshape2', 'AmesHousing', 'shinydashboard', 'shinyjs', 'shinythemes', 'threejs', 'tidyverse', 'useful', 'usethis', 'tidymodels', 'glmnet', 'xgboost')
 ---

@@ -60,7 +60,7 @@ such as `yes`, `yeah`,
 etc.
 
 ``` r
-newProject <- usethis::use_course('https://github.com/jaredlander/ODSC West 2018/archive/master.zip')
+newProject <- usethis::use_course('https://github.com/jaredlander/odscwest2018/archive/master.zip')
 ```
 
 <!-- After that runs successfully you will have a new folder holding the R project that looks like this (the name in the image may be different). -->
@@ -71,9 +71,9 @@ newProject <- usethis::use_course('https://github.com/jaredlander/ODSC West 2018
 
 <!-- ``` -->
 
-After running this code you will be in an RStudio Project called ODSC
-West 2018. You can see this in the top right of RStudio (the name in the
-image may be different).
+After running this code you will be in an RStudio Project called
+odscwest2018. You can see this in the top right of RStudio (the name in
+the image may be different).
 
 ![](images/ProjectCorner.png)<!-- -->
 
