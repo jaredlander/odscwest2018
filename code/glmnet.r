@@ -60,3 +60,18 @@ build.x( ~ Pop + Size - 1, data=boros)
 build.x( ~ Pop + Boro, data=boros)
 build.x( ~ Pop + Boro, data=boros, contrasts=FALSE)
 build.x( ~ Pop + Boro, data=boros, contrasts=FALSE, sparse=TRUE)
+
+
+landx_train <- build.x(valueFormula, data=land_train, 
+                       contrasts=FALSE, sparse=TRUE)
+landy_train <- build.y(valueFormula, data=land_train)
+
+landx_train
+head(landy_train, n=30)
+
+denseX <- build.x(valueFormula, data=land_train, 
+                  contrasts=FALSE, sparse=FALSE)
+pryr::object_size(landx_train)
+pryr::object_size(denseX)
+
+
