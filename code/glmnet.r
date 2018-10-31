@@ -78,3 +78,16 @@ library(glmnet)
 value2 <- glmnet(x=landx_train, y=landy_train, family='gaussian')
 
 View(as.matrix(coef(value2)))
+
+plot(value2, xvar='lambda')
+plot(value2, xvar='lambda', label=TRUE)
+coefpath(value2)
+
+library(animation)
+cv.ani(k=10)
+
+set.seed(11235)
+value3 <- cv.glmnet(x=landx_train, y=landy_train, 
+                    family='gaussian', 
+                    nfolds=5)
+plot(value3)
