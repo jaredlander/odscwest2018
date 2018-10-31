@@ -74,4 +74,7 @@ denseX <- build.x(valueFormula, data=land_train,
 pryr::object_size(landx_train)
 pryr::object_size(denseX)
 
+library(glmnet)
+value2 <- glmnet(x=landx_train, y=landy_train, family='gaussian')
 
+View(as.matrix(coef(value2)))
