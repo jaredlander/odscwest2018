@@ -91,3 +91,30 @@ value3 <- cv.glmnet(x=landx_train, y=landy_train,
                     family='gaussian', 
                     nfolds=5)
 plot(value3)
+coefpath(value3)
+
+coefplot(value3, sort='magnitude', lambda=exp(12.2))
+coefplot(value3, sort='magnitude', lambda='lambda.1se')
+coefplot(value3, sort='magnitude', lambda='lambda.min')
+
+coefplot(value3, sort='magnitude', lambda='lambda.1se', plot=FALSE)
+
+# myPredictions <- predict(value3, newx=mynewdata, s='lambda.1se')
+
+value4 <- cv.glmnet(x=landx_train, y=landy_train,
+                    family='gaussian',
+                    nfolds=5,
+                    alpha=0)
+
+coefpath(value4)
+
+
+value5 <- cv.glmnet(x=landx_train, y=landy_train,
+                    family='gaussian',
+                    nfolds=5,
+                    alpha=0.4)
+coefpath(value5)
+
+library(magrittr)
+coefplot(value3, sort='magnitude', lambda='lambda.1se', plot=FALSE) %>% 
+    dplyr::filter(Coefficient == 'LotArea')
