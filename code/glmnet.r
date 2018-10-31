@@ -25,3 +25,38 @@ valueFormula <- TotalValue ~ FireService +
     LotFront + LotDepth + BldgFront + 
     BldgDepth + LotType + Landmark + BuiltFAR +
     Built + HistoricDistrict - 1
+
+value1 <- lm(valueFormula, data=land_train)
+coef(value1)
+summary(value1)
+
+library(coefplot)
+coefplot(value1,sort='magnitude')
+
+
+sports <- c('Hockey', 'Lacrosse', 'Curling', 'Football', 
+            'Hockey', 'Curling', 'Hockey')
+sports
+model.matrix( ~ sports)
+
+boros <- tibble::tribble(
+    ~ Boro, ~ Pop, ~ Size, ~ Random,
+    'Manhattan', 1600000, 23, 13,
+    'Brooklyn', 2600000, 78, 42,
+    'Queens', 2330000, 104, 26,
+    'Bronx', 1500000, 42, 1,
+    'Staten Island', 480000, 60, 7
+)
+
+boros
+
+library(useful)
+
+build.x( ~ Pop, data=boros)
+build.x( ~ Pop + Size, data=boros)
+build.x( ~ Pop * Size, data=boros)
+build.x( ~ Pop : Size, data=boros)
+build.x( ~ Pop + Size - 1, data=boros)
+build.x( ~ Pop + Boro, data=boros)
+build.x( ~ Pop + Boro, data=boros, contrasts=FALSE)
+build.x( ~ Pop + Boro, data=boros, contrasts=FALSE, sparse=TRUE)
