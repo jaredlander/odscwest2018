@@ -49,3 +49,35 @@ dateRangeInput(
 )
 ```
 
+# Text INputs
+
+```{r text-inputs}
+textInput(
+    inputId='TextSample',
+    label='Write something',
+    placeholder='Something hidden'
+)
+
+textAreaInput(
+    inputId='TextArea',
+    label='Write a little longer'
+)
+
+passwordInput(
+    inputId='PasswordSample',
+    label='Enter the secret'
+)
+
+renderText(input$PasswordSample)
+```
+
+# Show Data
+
+```{r render-table}
+renderTable(mtcars, rownames=FALSE)
+
+renderDataTable(mtcars)
+
+DT::renderDataTable(mtcars)
+```
+
