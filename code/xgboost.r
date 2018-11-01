@@ -90,3 +90,43 @@ hist6 <- xgb.train(
     watchlist=list(train=xgTrain, validate=xgVal),
     print_every_n=1
 )
+
+hist7 <- xgb.train(
+    data=xgTrain,
+    objective='binary:logistic',
+    nrounds=500,
+    eval_metric='logloss',
+    watchlist=list(train=xgTrain, validate=xgVal),
+    print_every_n=1,
+    early_stopping_rounds=60
+)
+dygraph(hist7$evaluation_log)
+hist7$best_iteration
+hist7$best_score
+
+hist7 %>% 
+    xgb.importance(feature_names=colnames(landx_train)) %>% 
+    head(20) %>% 
+    xgb.plot.importance()
+
+hist8 <- xgb.train(
+    data=xgTrain,
+    objective='binary:logistic',
+    nrounds=500,
+    eval_metric='logloss',
+    watchlist=list(train=xgTrain, validate=xgVal),
+    print_every_n=1,
+    early_stopping_rounds=60,
+    max_depth=9
+)
+
+hist9 <- xgb.train(
+    data=xgTrain,
+    objective='binary:logistic',
+    nrounds=500,
+    eval_metric='logloss',
+    watchlist=list(train=xgTrain, validate=xgVal),
+    print_every_n=1,
+    early_stopping_rounds=60,
+    max_depth=4
+)
