@@ -1,0 +1,51 @@
+---
+title: Shiny in Markdown
+author: Headless Horseman, Still Candyless
+date: Today
+output: html_document
+runtime: shiny
+---
+
+# Select Input
+
+```{r select-input}
+selectInput(
+    inputId='CountrySelection',
+    label='Please choose a country',
+    choices=list('USA', 'Mexico', 'Canada', 'Serbia', 'South Africa')
+)
+```
+
+```{r print-state}
+renderText(input$CountrySelection)
+```
+
+```{r other-inputs}
+sliderInput(
+    inputId='SliderSample',
+    label='This is not from White Castle',
+    min=0, max=10, value=5
+)
+
+checkboxInput(
+    inputId='CheckSample',
+    label='Check this out'
+)
+
+radioButtons(
+    inputId='RadioSample',
+    label='Choose one',
+    choices=list('A', 'B', 'C')
+)
+
+dateInput(
+    inputId='DateChoice',
+    label='Select a Date'
+)
+
+dateRangeInput(
+    inputId='DateRangeChoices',
+    label='Choose a start and stop'
+)
+```
+
