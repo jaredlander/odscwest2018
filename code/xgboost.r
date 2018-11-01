@@ -130,3 +130,15 @@ hist9 <- xgb.train(
     early_stopping_rounds=60,
     max_depth=4
 )
+
+hist10 <- xgb.train(
+    data=xgTrain,
+    objective='binary:logistic',
+    nrounds=500,
+    eval_metric='logloss',
+    watchlist=list(train=xgTrain, validate=xgVal),
+    print_every_n=1,
+    early_stopping_rounds=60,
+    max_depth=4,
+    nthread=2
+)
