@@ -58,3 +58,16 @@ ___this text will be emphasized and strong___
 # Links
 
 [My website](http://www.jaredlander.com)
+
+# R Time!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+```{r}
+1 + 1
+```
+
+
+```{r}
+x <- 2
+x
+```
+
