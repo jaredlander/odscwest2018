@@ -110,7 +110,7 @@ sliderInput(
 radioButtons(
     inputId='PlotColor',
     label='Choose a color',
-    choices=list('red', 'green', 'blue')
+    choices=list('red', 'lightgreen'='green', 'blue')
 )
 
 renderPlot(
