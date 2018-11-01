@@ -1,0 +1,31 @@
+# Supervised Learning
+
+$$
+    Y = f(X)
+$$
+
+# Linear Regression
+
+$$
+    y = a + bx \\
+    y = mx + b \\
+    y = a + b_1x_1 + b_2x_2 + \dots + b_px_p
+$$
+
+$$
+    \hat{\beta} = (X^TX)^{-1}X^TY
+$$
+# Decision Trees
+
+$$
+    \hat{y} = \sum_{m} avg(R)I(x \in R_m)
+$$
+
+$$
+    \text{logloss} = ylog(p) + (1-y)log(1-p)
+$$
+
+$$
+    \hat{y}_t = f_t(X) + \hat{y}_{t-1} = \sum_{i=1}^t f_i(x)
+$$
+

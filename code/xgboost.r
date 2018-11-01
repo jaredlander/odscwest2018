@@ -142,3 +142,81 @@ hist10 <- xgb.train(
     max_depth=4,
     nthread=2
 )
+
+hist11 <- xgb.train(
+    data=xgTrain,
+    objective='binary:logistic',
+    nrounds=1000,
+    eval_metric='logloss',
+    watchlist=list(train=xgTrain, validate=xgVal),
+    print_every_n=1,
+    early_stopping_rounds=100,
+    max_depth=6,
+    eta=0.15
+)
+
+library(rsample)
+
+hist12 <- xgb.train(
+    data=xgTrain,
+    objective='binary:logistic',
+    eval_metric='logloss',
+    watchlist=list(train=xgTrain, validate=xgVal),
+    print_every_n=1,
+    nround=500,
+    early_stopping_rounds=60,
+    subsample=0.5, colsample_bytree=0.5
+)
+
+hist13 <- xgb.train(
+    data=xgTrain,
+    objective='binary:logistic',
+    eval_metric='logloss',
+    watchlist=list(train=xgTrain, validate=xgVal),
+    print_every_n=1,
+    nround=1,
+    early_stopping_rounds=60,
+    subsample=0.5, colsample_bytree=0.5,
+    num_parallel_tree=100
+)
+
+hist14 <- xgb.train(
+    data=xgTrain,
+    objective='binary:logistic',
+    eval_metric='logloss',
+    watchlist=list(train=xgTrain, validate=xgVal),
+    print_every_n=1,
+    nround=100,
+    early_stopping_rounds=60,
+    subsample=0.5, colsample_bytree=0.5,
+    num_parallel_tree=10,
+    nthreads=2
+)
+
+hist15 <- xgb.train(
+    data=xgTrain,
+    objective='binary:logistic',
+    eval_metric='logloss',
+    watchlist=list(train=xgTrain, validate=xgVal),
+    print_every_n=1,
+    nround=300,
+    early_stopping_rounds=60,
+    subsample=0.5, colsample_bytree=0.5,
+    num_parallel_tree=10,
+    max_depth=4,
+    nthreads=2
+)
+
+hist16 <- xgb.train(
+    data=xgTrain,
+    objective='binary:logistic',
+    eval_metric='auc',
+    watchlist=list(train=xgTrain, validate=xgVal),
+    print_every_n=1,
+    nround=300,
+    early_stopping_rounds=60,
+    subsample=0.5, colsample_bytree=0.5,
+    num_parallel_tree=10,
+    max_depth=4,
+    nthreads=2
+)
