@@ -81,3 +81,41 @@ renderDataTable(mtcars)
 DT::renderDataTable(mtcars)
 ```
 
+# Plots
+
+```{r render-plot}
+renderPlot(
+    hist(mtcars$mpg)
+)
+
+library(ggplot2)
+
+myColumn <- 'mpg'
+renderPlot(
+    ggplot(mtcars, aes_string(x=myColumn)) + geom_histogram()
+)
+
+selectInput(
+    inputId='PlotColumn',
+    label='Choose a column',
+    choices=names(mtcars)
+)
+
+sliderInput(
+    inputId='NumBins',
+    label='Choose number of bins',
+    min=5, max=50, value=20
+)
+
+radioButtons(
+    inputId='PlotColor',
+    label='Choose a color',
+    choices=list('red', 'green', 'blue')
+)
+
+renderPlot(
+    ggplot(mtcars, aes_string(x=input$PlotColumn)) + 
+        geom_histogram(bins=input$NumBins, fill=input$PlotColor)
+)
+```
+
