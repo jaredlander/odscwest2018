@@ -5,6 +5,11 @@ date: The Day After Halloween with no Candy
 output: html_document
 ---
 
+```{r setup,echo=FALSE}
+knitr::opts_chunk$set(cache=TRUE,echo=TRUE)
+```
+
+
 # My First Section
 
 This is a paragraph in my first section. Anything on the same line, even if it wraps around in the editor, is part of the same paragraph. Adding a third sentence to comply with antiquated rules of grammar.
@@ -71,3 +76,17 @@ x <- 2
 x
 ```
 
+```{r}
+x*4
+```
+
+```{r more-math,cache=TRUE}
+17 + 2
+```
+
+# Plots
+
+```{r diamonds-scatter,echo=FALSE,cache=TRUE,dependson='more-math',fig.align='center',fig.cap='Scatterplot of diamond price vs size and cut',}
+library(ggplot2)
+ggplot(diamonds, aes(x=carat, y=price, color=cut)) + geom_point()
+```
