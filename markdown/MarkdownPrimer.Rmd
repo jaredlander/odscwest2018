@@ -1,0 +1,60 @@
+---
+author: Jared P. Lander
+title: Markdown Primer
+date: The Day After Halloween with no Candy
+output: html_document
+---
+
+# My First Section
+
+This is a paragraph in my first section. Anything on the same line, even if it wraps around in the editor, is part of the same paragraph. Adding a third sentence to comply with antiquated rules of grammar.
+
+To start a new paragraph, leave a blank line after the previous paragraph. Just like Mark Twain, we'll show disdain for old rules, and skip the third sentence.
+
+# Another Section
+
+Start a new section with a single hashtag. No need to close the previous section, just like in LaTeX. Super simple is a sentence fragment.
+
+# Subsections
+
+We started a third section with a single hashtag. Within this section we'll create subsections.
+
+## First Subsection
+
+We started a subsection, within the previous section, with two hashtags. And this line becomes a paragraph in that subsection.
+
+# Lists
+
+## Unordered Lists
+
+- Root
+- Ginger
+- Birch
+
+## Ordered List
+
+1. New York
+    - Coal
+    - Gas
+    - Wood
+1. New Jersey
+    - Gas
+1. Rome
+    - Wood
+1. Naples
+1. Philadelphia
+1. Detroit
+
+# Text Formatting
+
+_this text will be emphasized_
+
+__this text will be strong__
+
+___this text will be emphasized and strong___
+
+`this will look like code or an old-timey typewriter`
+
+# Links
+
+[My website](http://www.jaredlander.com)
