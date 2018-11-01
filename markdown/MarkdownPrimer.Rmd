@@ -12,6 +12,8 @@ output:
       smooth_scroll: yes
   pdf_document:
     toc: yes
+params:
+    tidbit: "New York pizza is the best, obvi"
 ---
 
 ```{r setup,echo=FALSE}
@@ -110,5 +112,11 @@ tomato <- readr::read_csv(here::here('data', 'TomatoFirst.csv'))
 ```{r show-tomato,dependson=c('read-tomato-data')}
 library(DT)
 datatable(tomato, rownames=FALSE, elementId='TomatoTable')
+```
+
+# Parameters
+
+```{r show-params}
+params$tidbit
 ```
 
