@@ -1,8 +1,17 @@
 ---
-author: Jared P. Lander
-title: Markdown Primer
-date: The Day After Halloween with no Candy
-output: html_document
+title: "Markdown Primer"
+author: "Jared P. Lander"
+date: "The Day After Halloween with no Candy"
+always_allow_html: yes
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup,echo=FALSE}
@@ -90,3 +99,16 @@ x*4
 library(ggplot2)
 ggplot(diamonds, aes(x=carat, y=price, color=cut)) + geom_point()
 ```
+
+# Reading Data
+
+```{r read-tomato-data,cache.extra=file.info(here::here('data', 'TomatoFirst.csv'))$mtime}
+here::here('data', 'TomatoFirst.csv')
+tomato <- readr::read_csv(here::here('data', 'TomatoFirst.csv'))
+```
+
+```{r show-tomato,dependson=c('read-tomato-data')}
+library(DT)
+datatable(tomato, rownames=FALSE, elementId='TomatoTable')
+```
+
