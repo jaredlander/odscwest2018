@@ -116,6 +116,12 @@ datatable(tomato, rownames=FALSE, elementId='TomatoTable')
 
 # Parameters
 
+Render with this code
+```{r render-code,eval=FALSE}
+rmarkdown::render('markdown/MarkdownPrimer.Rmd', output_file='MarkdownPrimer.html', params=list(tidbit=c('Duh, NY pizza is awesome')))
+```
+
+
 ```{r show-params}
 params$tidbit
 ```
