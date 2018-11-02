@@ -1,4 +1,5 @@
 library(shiny)
+library(shinythemes)
 
 plotsPanel <- tabPanel(
     title='Plots',
@@ -46,6 +47,8 @@ mapPanel <- tabPanel(
 navbarPage(
     title='My First Shiny App',
     selected='Pizza',
+    theme=shinytheme(theme='cosmo'),
+    themeSelector(),
     tabPanel(
         title='Legend of Zelda',
         'An adventure to save the world from an evil warmonger',
